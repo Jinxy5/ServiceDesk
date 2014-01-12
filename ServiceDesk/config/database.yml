@@ -14,6 +14,7 @@ test:
   encoding: unicode
   database: servicedesk_test
   pool: 5
+  username: postgres
   password: d4tpost12
   #timeout: 5000
 
@@ -22,5 +23,6 @@ production:
   encoding: unicode
   database: servicedesk_production
   pool: 5
+  username: postgres
   password: d4tpost12
   #timeout: 5000
