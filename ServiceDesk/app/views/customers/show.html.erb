@@ -1,1 +1,10 @@
-<h2><%= @customer.first_name %></h2>
+<h2>
+  <%= @customer.first_name %>
+  <%= @customer.last_name %>
+</h2>
+
+<p>
+  <%= number_to_phone(@customer.phone_number, area_code: true) %></br>
+  <%= @customer.address %></br>
+  <%= @customer.zip_code %></br>
+</p>

@@ -15,6 +15,7 @@ class CustomersController < ApplicationController
       redirect_to @customer
     else
       flash[:alert] = "Customer not created."
+      render action: 'new'
     end
   end
 
