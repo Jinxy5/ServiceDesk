@@ -1,16 +1,16 @@
 require 'spec_helper'
 
 describe "Creating Customers" do
+  let!(:customer) { FactoryGirl.create(:customer) }
 
-  context "Creating a valid customer" do
-    let!(:customer) { FactoryGirl.create(:customer) }
-    
-    before do
-      visit '/'
-      click_link "New Customer"
-    end
+  before(:each) do
+    visit '/'
+    click_link "Customers"
+    click_link "New Customer"
+  end
 
-    it "displays a successful creation" do
+  context "when valid" do
+    it "display success" do
 
       fill_in "First Name", with: customer.first_name
       fill_in "Last Name", with: customer.last_name
@@ -24,13 +24,8 @@ describe "Creating Customers" do
     end
   end
 
-  context "Creating an invalid customer" do
-    before do
-      visit '/'
-      click_link "New Customer"
-    end
-
-    it "displays an error message" do
+  context "when invalid" do
+    it "display an error" do
       #Leave all forms blank
       click_button "Create"
 
