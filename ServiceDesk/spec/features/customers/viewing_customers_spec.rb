@@ -14,7 +14,7 @@ describe "Viewing Customers" do
     end
   end
 
-  describe "a profile" do
+  describe "the Customer page" do
     it "shows Customer details" do
       click_link customer.full_name
       #Display Customer factory attributes   
