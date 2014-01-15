@@ -31,6 +31,14 @@ class CustomersController < ApplicationController
     redirect_to @customer
   end
 
+  def destroy
+    @customer = Customer.find(params[:id])
+    @customer.destroy
+
+    flash[:notice] = "Customer destroyed."
+    redirect_to customers_path
+  end
+
   def show
     @customer = Customer.find(params[:id])
   end
