@@ -30,7 +30,6 @@ describe "Creating Customers" do
       click_button "Create"
 
       expect(page).to have_content("Customer not created.")
-      expect(page).to have_content("First name can't be blank")
     end
   end
 
