@@ -9,6 +9,17 @@
   <%= @customer.zip_code %></br>
 </p>
 
+<h3> Their computers: </h3>
+<ol>
+	<% @customer.computers.each do |computer|%>
+		<li>
+			<%= link_to computer.model, customer_computer_path(@customer.id, computer.id) %>
+		</li>
+	<% end %>
+</ol>
+<p>
+	<%= link_to 'Add Computer', new_customer_computer_path(@customer, @computer)%>
+</p>
 <%= link_to "Edit", edit_customer_path(@customer) %>
 <%= link_to "Delete", customer_path(@customer),
       method: :delete,

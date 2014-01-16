@@ -1,0 +1,28 @@
+<h1>Listing <%= @customer.full_name %>'s computers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @computers.each do |computer| %>
+      <tr>
+        <td><%= computer.model %></td>
+        <td><%= link_to 'Show', customer_computers_path %></td>
+        <td><%= link_to 'Edit', edit_customer_computer_path(computer.customer, computer) %></td>
+        <td><%= link_to 'Destroy', customer_computers_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<p><%= link_to 'New Computer', new_customer_computer_path %></p>
+<p><%= link_to @customer.full_name + "'s profile", customer_path( @customer.id ) %></p>

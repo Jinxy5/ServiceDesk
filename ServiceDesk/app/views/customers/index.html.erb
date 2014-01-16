@@ -1,7 +1,10 @@
 <h2>Customers</h2>
 <ul>
   <% @customers.each do |customer| %>
-    <li><%= link_to customer.full_name, customer %></li>
+  	<% ticket = "doesn't have a ticket" %>
+  	<% ticket = "has a ticket" if customer.ticket == true %>
+
+	    <li><%= link_to customer.full_name + " " + ticket, customer %></li>  	
   <% end %>
 </ul>
 <%= link_to "New Customer", new_customer_path %>

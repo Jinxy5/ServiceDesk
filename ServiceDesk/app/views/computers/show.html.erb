@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @computer.model %>
+</p>
+
+<%= link_to 'Edit', edit_customer_computer_path(@computer.customer, @computer) %> |
+<%= link_to 'Back', customer_computers_path %>
